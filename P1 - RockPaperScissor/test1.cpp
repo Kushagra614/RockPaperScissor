@@ -8,12 +8,13 @@ int chosen,flag;
 int comp;
 int N = 3;
 
-void comOption(){
+void computer_choice(){
     srand(time(0));
     comp = rand() % N+1;
     cout << "The option chosen by computer is "<< comp << " "<<endl;
   
 }
+
 
 
 void options(){
@@ -22,31 +23,52 @@ void options(){
    cout<<" 3) SCISSOR"<<endl;
    cout<<"Press 1 to choose ROCK, Press 2 to choose PAPER, Press 3 to choose SCISSOR"<<endl;
 
+  
     cout<<"Option Chosen: ";
     cin>>chosen;
-    if  (chosen == 1)
+
+    switch (chosen)
     {
+    case 1:
       cout<<"You have chosen ROCK"<<endl;
-
-    }
-    else if (chosen == 2)
-    {
+      break;
+    case 2:
       cout<<"You have chosen PAPER"<<endl;
-    }
-    else if (chosen == 3)
-    {
+      break;
+    case 3:
       cout<<"You have chosen SCISSOR"<<endl;
-    }
-    else{
-      flag = 1;
+      break;
+    
+    
+    default:
+      cout<<"Invalid input"<<endl;
+      break;
     }
 
-    if (flag ==1)
-    {
-      cout<<"Invalid option"<<endl;
-      exit(flag);
-    }
-}
+
+//     if  (chosen == 1)
+//     {
+//       cout<<"You have chosen ROCK"<<endl;
+
+//     }
+//     else if (chosen == 2)
+//     {
+//       cout<<"You have chosen PAPER"<<endl;
+//     }
+//     else if (chosen == 3)
+//     {
+//       cout<<"You have chosen SCISSOR"<<endl;
+//     }
+//     else{
+//       flag = 1;
+//     }
+
+//     if (flag ==1)
+//     {
+//       cout<<"Invalid option"<<endl;
+//       exit(flag);
+//     }
+ }
 
 
 void game() {
@@ -66,7 +88,7 @@ int main()
     cout<<"WELCOME TO THE GAME: [ROCK-PAPER-SCISSOR] "<<endl;
    cout<<"CHOOSE YOUR OPTION: "<<endl;
    options();
-   comOption();
+   computer_choice();
    cout<<"Now the game starts: "<<endl;
    game();
    return 0;
